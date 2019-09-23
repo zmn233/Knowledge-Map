@@ -39,16 +39,17 @@ function throttleTimeout(func, wait) {
 
 function throttle(func, wait, options) {
     let pre = 0, timeout
-
+    options = options || {}
     const throttleFn = function () {
         const context = this
         const args = arguments
         let now = Date.now()
-        timeout = setTimeout(() => func.call(context, args), wait) 
+        clearTimeout(timeout)
         if (now - pre > wait) {
             func.call(context, args)
             pre = Date.now()
-            clearTimeout(timeout)
+        } else {
+            timeout = setTimeout(() => func.call(context, args), wait)
         }
     }
     return throttleFn
