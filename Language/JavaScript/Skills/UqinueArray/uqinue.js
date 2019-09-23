@@ -45,7 +45,34 @@ console.log(uniqueFilter(['1', 1, 1, 1, '1']))
 function uniqueSet(arr) {
     return Array.from(new Set(arr))
 }
-
 console.log(uniqueSet([1, 1, 1, '1']))
 
 console.log([1, '2', 'abc', 'bca', [1, 2], {a: 1, b: 2}])
+
+// reduce 版
+function uniqueReduce(arr) {
+    // 因为是比较当前项与前一项是否相同，所以需要保证数组已经排序，
+    return arr.sort().reduce((init, current) => {
+        if (init.length == 0 || init[init.length - 1] !== current) {
+            init.push(current)
+        }
+        return init
+    }, [])
+}
+
+console.log(uniqueReduce([3, 3, 2, 2, 9, 6, '1', 1]))
+
+// Map 版
+function uniqueMap(arr) {
+    let resArr = []
+    let tempMap = new Map()
+    arr.forEach((item, index) => {
+        if (!tempMap.has(item)) {
+            tempMap.set(item, 1)
+            resArr.push(item)
+        }
+    })
+    return resArr
+}
+
+console.log(uniqueMap([3, 3, 2, 2, 9, 6, '1', 1]))
