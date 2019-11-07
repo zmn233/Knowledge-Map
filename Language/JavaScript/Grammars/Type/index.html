@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    const toString = Object.prototype.toString
+    var b
+    console.log(toString.call(''))  // [object String]
+    console.log(toString.call(1))  // [object Number]
+    console.log(toString.call(NaN))  // [object Number]
+    console.log(toString.call(true))  // [object Boolean]
+    console.log(toString.call([]))  // [object Array]
+    console.log(toString.call({}))  // [object Object]
+    console.log(toString.call(null))  // [object Null]
+    console.log(toString.call(b))  // [object Undefined]
+    console.log(toString.call(Symbol()))  // [object Symbol]
+    console.log(toString.call(new Date()))  // [object Date]
+    // console.log(toString.call())
+    // console.log(toString.call())
+  </script>
+</body>
+</html>
