@@ -36,7 +36,7 @@ new Promise(function(resolve) {
     console.log('then1');
 })
 
-console.log('global1'); 
+console.log('global233333'); 
 // 输出 
 // promise1
 // promise2
