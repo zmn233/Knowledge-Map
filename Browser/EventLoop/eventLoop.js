@@ -33,10 +33,10 @@ new Promise(function(resolve) {
     }
     console.log('promise2');
 }).then(function() {
-    console.log('then1');
+    console.log('then2333');
 })
 
-console.log('global1'); 
+console.log('global233333'); 
 // 输出 
 // promise1
 // promise2
