@@ -33,7 +33,7 @@ new Promise(function(resolve) {
     }
     console.log('promise2');
 }).then(function() {
-    console.log('then1');
+    console.log('then2333333');
 })
 
 console.log('global233333'); 
